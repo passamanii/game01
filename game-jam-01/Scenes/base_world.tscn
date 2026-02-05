@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwfowqeskogh2"]
+
+[ext_resource type="PackedScene" uid="uid://dc64alatwus00" path="res://Maps/base_map.tscn" id="1_aqfjg"]
+[ext_resource type="PackedScene" uid="uid://cx8p3c1ahsd7r" path="res://Player/player.tscn" id="2_1wmeh"]
+
+[node name="BaseWorld" type="Node2D"]
+
+[node name="BaseMap" parent="." instance=ExtResource("1_aqfjg")]
+
+[node name="Player" parent="." instance=ExtResource("2_1wmeh")]
+position = Vector2(1484, 2257)
