@@ -1,7 +1,11 @@
+Timer
 CollisionShape2D
 Area2D
-AnimationPlayer
 TileMapLayer
 TileMap
+AnimationPlayer
+ColorRect
+Button
+Control
 AnimationTree
 Camera2D

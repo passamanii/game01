@@ -1,8 +1,7 @@
-res://assets/Personagens/player.tscn
-res://scripts/player.gd
-res://scenes/Mapas/sala_faimisson.gd
-res://scenes/Mapas/Main_Mapa.tscn
+res://scenes/Mapas/Biblioteca.tscn
+res://scenes/Mapas/biblioteca.gd
+res://scripts/Mapas/biblioteca.gd
 res://scenes/Mapas/Sala_Faimisson.tscn
-res://scripts/main_mapa.gd
-res://scripts/sala_faimisson.gd
-res://scenes/Entidade/Player/player.tscn
+res://scripts/Mapas/sala_faimisson.gd
+res://scenes/Entidades/Player/player.tscn
+res://scenes/Mapas/Main_Mapa.tscn

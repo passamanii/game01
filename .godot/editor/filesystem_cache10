@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1770925262
+::res://::1771110250
 icon.svg::CompressedTexture2D::6307799629846284826::1770913577::1770913671::1::::<><><>0<>0<>af4e94d3cd688188f9a4e9bad770ee01<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://assets/::1770913577
 ::res://assets/Ataques/::1770913576
@@ -237,18 +237,32 @@ rip.png::CompressedTexture2D::6240662729136832464::1770913577::1770913672::1::::
 During Dash.png::CompressedTexture2D::4874707863838441078::1770913577::1770913672::1::::<><><>0<>0<>5e9ece567cc96b19683c8582b31f655f<>res://.godot/imported/During Dash.png-edc607d5524dd42b96c17cbf4d2c016a.ctex::
 End Dash.png::CompressedTexture2D::5643213334334417983::1770913577::1770913672::1::::<><><>0<>0<>f209c4eb1346a8d6cda7c2d61bc0cd0d<>res://.godot/imported/End Dash.png-30aa61f774ecd1c072345008905ae7c5.ctex::
 Start Dash.png::CompressedTexture2D::5332572334160906636::1770913577::1770913672::1::::<><><>0<>0<>a9bf0e1895a7c8ead7e33630b14d180b<>res://.godot/imported/Start Dash.png-9da69660fdc3a6a0e221354aad677014.ctex::
-::res://scenes/::1770925262
-::res://scenes/Entidade/::1770925262
-::res://scenes/Entidade/Inimigos/::1770913577
+::res://scenes/::1771106658
+::res://scenes/Entidades/::1770925262
+::res://scenes/Entidades/Inimigos/::1770913577
 base_enemy.tscn::PackedScene::7384172914071620712::1770913577::0::1::::<><><>0<>0<><>::
-::res://scenes/Entidade/Player/::1770925206
-player.tscn::PackedScene::8921897001007871068::1770925110::0::1::::<><><>0<>0<><>::uid://ds510arw8whi::::res://scripts/player.gd<>uid://pwxq3yg5h0ba::::res://assets/Ataques/Principal/ataque_mlee/principal_costa_ataque.png<>uid://bciauijpth4hx::::res://assets/Ataques/Principal/ataque_mlee/principal_frente_ataque.png<>uid://dt8ip54ehq5tq::::res://assets/Ataques/Principal/ataque_mlee/principal_esquerda_ataque.png<>uid://cu2yjm7fk647e::::res://assets/Ataques/Principal/ataque_mlee/principal_direita_ataque.png<>uid://cmnu5tnrnrsjn::::res://assets/Personagens/Principal/Dash/End Dash.png<>uid://c4xpuu3ldxv8b::::res://assets/Personagens/Principal/principal_costa_dano.png<>uid://dqb8nhm7odn3y::::res://assets/Personagens/Principal/principal_costa.png<>uid://f4tcyhirnidp::::res://assets/Personagens/Principal/principal_frente_dano.png<>uid://bof0vyen4rhs7::::res://assets/Personagens/Principal/principal_frente.png<>uid://bygeouqmqs1my::::res://assets/Personagens/Principal/principal_esquerda_dano.png<>uid://ctqoqc08dqppt::::res://assets/Personagens/Principal/principal_esquerda.png<>uid://oke0s7mkw2i5::::res://assets/Personagens/Principal/principal_direita_dano.png<>uid://d1xlkaj6ccny0::::res://assets/Personagens/Principal/principal_direita.png<>uid://ofv0skmqjapf::::res://assets/Personagens/Principal/principal.png
-::res://scenes/Mapas/::1770925802
-Bilioteca.tscn::PackedScene::6546052801156149168::1770913577::0::1::::<><><>0<>0<><>::
-Main_Mapa.tscn::PackedScene::3261918289802220957::1770925588::0::1::::<><><>0<>0<><>::uid://dybf21lx3otev::::res://assets/Cenario/Mundo/mato.png<>uid://dvaoe2voghxfs::::res://scripts/main_mapa.gd<>uid://mytv0gjymvg0::::res://assets/Cenario/Sala/piso15x15.png<>uid://d0d3ltflnild1::::res://scenes/Entidade/Player/player.tscn
-sala_faimisson.gd::GDScript::2099384162583354660::1770925750::0::1::::<>Node2D<><>0<>0<><>::
-Sala_Faimisson.tscn::PackedScene::4634303888812060875::1770925888::0::1::::<><><>0<>0<><>::uid://457sykiu4ioa::::res://scenes/Mapas/sala_faimisson.gd<>uid://bw63bniu48i6r::::res://assets/Cenario/Sala/parede_madeira_frente.png<>uid://d0d3ltflnild1::::res://scenes/Entidade/Player/player.tscn<>uid://dvvn0vukv56i::::res://assets/Cenario/Sala/parede_lados_cima.png<>uid://mytv0gjymvg0::::res://assets/Cenario/Sala/piso15x15.png<>uid://c75sr3nx5ed7n::::res://assets/Cenario/Sala/parede_madeira_frente_rodape.png
-::res://scripts/::1770925801
-main_mapa.gd::GDScript::8634086399768095792::1770925801::0::1::::<>Node2D<><>0<>0<><>::
-player.gd::GDScript::249594584798572246::1770924752::0::1::::BasePlayer<>CharacterBody2D<><>0<>0<><>::
+::res://scenes/Entidades/Player/::1771107917
+player.tscn::PackedScene::8921897001007871068::1771107917::0::1::::<><><>0<>0<><>::uid://ds510arw8whi::::res://scripts/Entidades/Player/player.gd<>uid://pwxq3yg5h0ba::::res://assets/Ataques/Principal/ataque_mlee/principal_costa_ataque.png<>uid://bciauijpth4hx::::res://assets/Ataques/Principal/ataque_mlee/principal_frente_ataque.png<>uid://dt8ip54ehq5tq::::res://assets/Ataques/Principal/ataque_mlee/principal_esquerda_ataque.png<>uid://cu2yjm7fk647e::::res://assets/Ataques/Principal/ataque_mlee/principal_direita_ataque.png<>uid://cmnu5tnrnrsjn::::res://assets/Personagens/Principal/Dash/End Dash.png<>uid://c4xpuu3ldxv8b::::res://assets/Personagens/Principal/principal_costa_dano.png<>uid://dqb8nhm7odn3y::::res://assets/Personagens/Principal/principal_costa.png<>uid://f4tcyhirnidp::::res://assets/Personagens/Principal/principal_frente_dano.png<>uid://bof0vyen4rhs7::::res://assets/Personagens/Principal/principal_frente.png<>uid://bygeouqmqs1my::::res://assets/Personagens/Principal/principal_esquerda_dano.png<>uid://ctqoqc08dqppt::::res://assets/Personagens/Principal/principal_esquerda.png<>uid://oke0s7mkw2i5::::res://assets/Personagens/Principal/principal_direita_dano.png<>uid://d1xlkaj6ccny0::::res://assets/Personagens/Principal/principal_direita.png<>uid://ofv0skmqjapf::::res://assets/Personagens/Principal/principal.png
+::res://scenes/Mapas/::1771110216
+biblioteca.gd::GDScript::4605164133947596538::1771110471::0::1::::<>Node2D<><>0<>0<><>::
+Biblioteca.tscn::PackedScene::6546052801156149168::1771110495::0::1::::<><><>0<>0<><>::uid://b6u1m62yxtcqk::::res://scenes/Mapas/biblioteca.gd<>uid://dvvn0vukv56i::::res://assets/Cenario/Sala/parede_lados_cima.png<>uid://bw63bniu48i6r::::res://assets/Cenario/Sala/parede_madeira_frente.png<>uid://c75sr3nx5ed7n::::res://assets/Cenario/Sala/parede_madeira_frente_rodape.png<>uid://mytv0gjymvg0::::res://assets/Cenario/Sala/piso15x15.png<>uid://d0d3ltflnild1::::res://scenes/Entidades/Player/player.tscn<>uid://dpm6regsguk6c::::res://scenes/Transitions/Fade_Transition.tscn
+Main_Mapa.tscn::PackedScene::3261918289802220957::1771109408::0::1::::<><><>0<>0<><>::uid://dybf21lx3otev::::res://assets/Cenario/Mundo/mato.png<>uid://dvaoe2voghxfs::::res://scripts/Mapas/main_mapa.gd<>uid://mytv0gjymvg0::::res://assets/Cenario/Sala/piso15x15.png<>uid://d0d3ltflnild1::::res://scenes/Entidades/Player/player.tscn<>uid://dpm6regsguk6c::::res://scenes/Transitions/Fade_Transition.tscn
+Sala_Faimisson.tscn::PackedScene::4634303888812060875::1771109404::0::1::::<><><>0<>0<><>::uid://457sykiu4ioa::::res://scripts/Mapas/sala_faimisson.gd<>uid://bw63bniu48i6r::::res://assets/Cenario/Sala/parede_madeira_frente.png<>uid://d0d3ltflnild1::::res://scenes/Entidades/Player/player.tscn<>uid://dvvn0vukv56i::::res://assets/Cenario/Sala/parede_lados_cima.png<>uid://mytv0gjymvg0::::res://assets/Cenario/Sala/piso15x15.png<>uid://c75sr3nx5ed7n::::res://assets/Cenario/Sala/parede_madeira_frente_rodape.png<>uid://dpm6regsguk6c::::res://scenes/Transitions/Fade_Transition.tscn
+::res://scenes/Menus/::1771108647
+Collectibles.tscn::PackedScene::9152053811890391190::1771105026::0::1::::<><><>0<>0<><>::
+Main_Menu.tscn::PackedScene::1508194400172670241::1771108647::0::1::::<><><>0<>0<><>::uid://dit3tfk54f47b::::res://scripts/Menus/main_menu.gd<>uid://36ql6k2n6im3::::res://assets/Cenario/Capa Menu.png<>uid://dpm6regsguk6c::::res://scenes/Transitions/Fade_Transition.tscn
+Options.tscn::PackedScene::4341320379044734806::1771104894::0::1::::<><><>0<>0<><>::
+::res://scenes/Transitions/::1771107938
+Fade_Transition.tscn::PackedScene::8238780044159531272::1771107938::0::1::::<><><>0<>0<><>::
+::res://scripts/::1771105180
+::res://scripts/Entidades/::1771105137
+::res://scripts/Entidades/Inimigos/::1771105132
+::res://scripts/Entidades/Player/::1771107917
+player.gd::GDScript::249594584798572246::1771107917::0::1::::BasePlayer<>CharacterBody2D<><>0<>0<><>::
+::res://scripts/Globals/::1771105180
 player_stats.gd::GDScript::2682073562251127366::1770913577::0::1::::<>Node<><>0<>0<><>::
+::res://scripts/Mapas/::1771109328
+main_mapa.gd::GDScript::8634086399768095792::1771109328::0::1::::<>Node2D<><>0<>0<><>::
+sala_faimisson.gd::GDScript::2099384162583354660::1771108928::0::1::::<>Node2D<><>0<>0<><>::
+::res://scripts/Menus/::1771108612
+main_menu.gd::GDScript::7761730262859194477::1771108612::0::1::::<>Node2D<><>0<>0<><>::
