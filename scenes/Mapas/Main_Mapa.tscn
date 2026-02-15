@@ -59,6 +59,7 @@ shape = SubResource("RectangleShape2D_3enmg")
 
 [node name="Enter_Biblioteca" type="Area2D" parent="."]
 position = Vector2(0, -1)
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enter_Biblioteca"]
 position = Vector2(599, -236)
