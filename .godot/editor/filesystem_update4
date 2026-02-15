@@ -1,7 +1,1 @@
 res://scenes/Mapas/Biblioteca.tscn
-res://scenes/Mapas/biblioteca.gd
-res://scripts/Mapas/biblioteca.gd
-res://scenes/Mapas/Sala_Faimisson.tscn
-res://scripts/Mapas/sala_faimisson.gd
-res://scenes/Entidades/Player/player.tscn
-res://scenes/Mapas/Main_Mapa.tscn
