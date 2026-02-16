@@ -37,7 +37,7 @@ func move() -> void:
 
 func attack() -> void:
 	if is_in_range:
-		target.get_hit(damage)
+		target.get_hit(damage, self.position)
 
 func can_chase() -> bool:
 	return self.position.distance_to(target.position) <= chase_range and !is_in_range

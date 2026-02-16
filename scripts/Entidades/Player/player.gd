@@ -8,14 +8,19 @@ var is_dashing: bool = false
 var is_attacking: bool = false
 var dir: Vector2
 var facing: String = ''
+var knockback_force: int = 1000
+# É o quanto o knockback desacelera por segundo.
+var knockback_decay: int = 3000
+var knockback_velocity: Vector2 = Vector2.ZERO
 	
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 
-func _physics_process(_delta: float) -> void:
-	
+func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("reset"):
 		
 		get_tree().reload_current_scene()
+	
+	apply_knockback(delta)
 		
 	if !is_attacking:
 		
@@ -31,7 +36,16 @@ func attack() -> void:
 	if Input.is_action_just_pressed("attack"):
 		is_attacking = true;
 
+func apply_knockback(delta: float) -> void:
+	if knockback_velocity.length() > 0:
+		knockback_velocity = knockback_velocity.move_toward(Vector2.ZERO, knockback_decay * delta)
+
 func movementPlayer() -> void:
+	if (knockback_velocity.length() > 0):
+		velocity = knockback_velocity
+		move_and_slide()
+		return
+	
 	dir = Input.get_vector("left", "right", "up", "down")
 	velocity = dir * SPEED
 	
@@ -44,6 +58,9 @@ func movementPlayer() -> void:
 	move_and_slide()
 	
 func animationsPlayer() -> void:
+	if knockback_velocity.length() > 0:
+		animation_player.play("Hurt_Front")
+		return
 	
 	if (!is_attacking):
 		
@@ -109,11 +126,13 @@ func dash() -> void:
 		can_dash = false
 		await get_tree().create_timer(1.0).timeout
 		can_dash = true
-
-func get_hit(damage) -> void:
-	print("Player: AI!")
-	PlayerStats.health -= damage;
 	
+func get_hit(damage: int, hit_position: Vector2) -> void:
+	print("Player: AI!")
+	var direction = (global_position - hit_position).normalized()
+	knockback_velocity = direction * knockback_force
+	
+	PlayerStats.health -= damage;
 	if (PlayerStats.health <= 0):
 		die()
 
