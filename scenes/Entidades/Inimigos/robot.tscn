@@ -141,11 +141,11 @@ radius = 16.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_gp07y"]
 radius = 11.0
 
-[node name="Robot" instance=ExtResource("1_gg1tp")]
+[node name="Robot" groups=["Enemy"] instance=ExtResource("1_gg1tp")]
 modulate = Color(0.25565878, 0.25565878, 0.25565878, 1)
 scale = Vector2(4, 4)
 collision_mask = 19
-max_health = 100
+max_health = 25
 damage = 7
 speed = 300
 chase_range = 999999

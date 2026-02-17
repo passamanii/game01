@@ -27,6 +27,11 @@ func _ready() -> void:
 	health = max_health
 	target = get_tree().get_first_node_in_group("Player")
 
+func _physics_process(_delta: float) -> void:
+	var separation = (target.position - position).length()
+	if separation >= 1800:
+		queue_free()
+
 func move() -> void:
 	if (knockback_velocity.length()) > 0:
 		velocity = knockback_velocity
