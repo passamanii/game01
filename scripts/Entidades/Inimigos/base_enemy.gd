@@ -14,17 +14,25 @@ class_name BaseEnemy
 @export var damage: int
 @export var speed: int
 @export var chase_range: int
-@export var attack_range: int
 @export var xp_amount: int
 
 var health: int
 var target: BasePlayer
+var is_in_range: bool
+var knockback_force: int = 1000
+var knockback_decay: int = 3000
+var knockback_velocity: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
 	health = max_health
 	target = get_tree().get_first_node_in_group("Player")
 
 func move() -> void:
+	if (knockback_velocity.length()) > 0:
+		velocity = knockback_velocity
+		move_and_slide()
+		return
+	
 	var dir: Vector2 = self.position.direction_to(target.position)
 	velocity = dir * speed
 	
@@ -36,35 +44,41 @@ func move() -> void:
 	move_and_slide()
 
 func attack() -> void:
-	hitbox_area.monitoring = true
-	print("TOMA")
+	if is_in_range:
+		target.get_hit(damage, self.position)
 
 func can_chase() -> bool:
-	if (self.position.distance_to(target.position) <= chase_range and !is_in_attack_range()):
-		return true
-	else:
-		return false
-
-func is_in_attack_range() -> bool:
-	if (self.position.distance_to(target.position) <= attack_range):
-		return true
-	else:
-		return false
+	return self.position.distance_to(target.position) <= chase_range and !is_in_range
 
 func can_attack() -> bool:
-	if (is_in_attack_range() and attack_cooldown.is_stopped()):
-		return true
-	else:
-		return false
+	return is_in_range and attack_cooldown.is_stopped()
+
+func get_hit() -> void:
+	print("Inimigo: AIiiiIíÍ!")
+	var direction = (global_position - target.global_position).normalized()
+	knockback_velocity = direction * knockback_force
+	
+	health -= PlayerStats.damage
+	if (health <= 0):
+		die()
 
 func start_cooldown() -> void:
-	print("ataque")
 	attack_cooldown.start()
+
+func apply_knockback(delta) -> void:
+	knockback_velocity = knockback_velocity.move_toward(Vector2.ZERO, knockback_decay * delta)
 
 func die() -> void:
 	print("Morreu: ", self.name)
-	pass
 
-func _on_anim_player_animation_finished(anim_name: StringName) -> void:
-	if (anim_name == "Attacking"):
-		hitbox_area.monitoring = false
+func _on_hitbox_area_area_entered(area: Area2D) -> void:
+	if (area.get_parent().is_in_group("Player")):
+		is_in_range = true
+
+func _on_hitbox_area_area_exited(area: Area2D) -> void:
+	if (area.get_parent().is_in_group("Player")):
+		is_in_range = false
+
+func _on_hurtbox_area_area_entered(area: Area2D) -> void:
+	if (area.get_parent().is_in_group("Player")):
+		get_hit()
