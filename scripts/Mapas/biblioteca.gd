@@ -16,7 +16,7 @@ func _process(_delta: float) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	
 	if (body.is_in_group('Player')):
-		
+		$Player/AnimationPlayer.play('Idle_Front')
 		$Player.set_physics_process(false)
 		area_entered = 'main_mapa'
 		$Fade_Transition.show()
