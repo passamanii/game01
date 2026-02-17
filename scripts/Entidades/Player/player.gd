@@ -2,9 +2,8 @@ extends CharacterBody2D
 class_name BasePlayer
 
 const SPEED = 300.0
-const DASH_SPEED = 1500.0
 const ATTACK_DISTANCE := 25.0
-
+const DASH_SPEED = SPEED * 6
 var can_dash: bool = true
 var is_dashing: bool = false
 var is_attacking: bool = false
@@ -123,7 +122,7 @@ func animationsPlayer() -> void:
 
 func dash() -> void:
 	is_dashing = true
-	await get_tree().create_timer(0.2).timeout 
+	await get_tree().create_timer(0.4).timeout 
 	is_dashing = false
 	can_dash = false
 	await get_tree().create_timer(1.0).timeout
