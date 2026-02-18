@@ -39,13 +39,16 @@ _data = {
 &"fade_out": SubResource("Animation_syjg4")
 }
 
-[node name="Fade_Transition" type="CanvasLayer" node_paths=PackedStringArray("timer", "anim_transition")]
+[node name="Fade_Transition" type="Control" node_paths=PackedStringArray("timer", "anim_transition")]
 visible = false
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_4ydro")
 timer = NodePath("Timer")
 anim_transition = NodePath("AnimTransition")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 offset_left = -31245.0
 offset_top = -19479.0
 offset_right = 30381.0

@@ -303,9 +303,10 @@ text = "Mesa"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="InteractArea" type="Area2D" parent="Objects/Mesa1"]
+[node name="InteractArea" type="Area2D" parent="Objects/Mesa1" node_paths=PackedStringArray("fade_transition")]
 collision_mask = 2
 script = ExtResource("6_0vaec")
+fade_transition = NodePath("../../../Fade_Transition")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Mesa1/InteractArea"]
 position = Vector2(-0.1875, -2.46875)
@@ -332,9 +333,10 @@ text = "Mesa"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="InteractArea" type="Area2D" parent="Objects/Mesa2"]
+[node name="InteractArea" type="Area2D" parent="Objects/Mesa2" node_paths=PackedStringArray("fade_transition")]
 collision_mask = 2
 script = ExtResource("6_0vaec")
+fade_transition = NodePath("../../../Fade_Transition")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Mesa2/InteractArea"]
 position = Vector2(-0.1875, -2.46875)
@@ -361,9 +363,10 @@ text = "Mesa"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="InteractArea" type="Area2D" parent="Objects/Mesa3"]
+[node name="InteractArea" type="Area2D" parent="Objects/Mesa3" node_paths=PackedStringArray("fade_transition")]
 collision_mask = 2
 script = ExtResource("6_0vaec")
+fade_transition = NodePath("../../../Fade_Transition")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Mesa3/InteractArea"]
 position = Vector2(-0.1875, -2.46875)
@@ -390,13 +393,16 @@ text = "Mesa"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="InteractArea" type="Area2D" parent="Objects/Mesa4"]
+[node name="InteractArea" type="Area2D" parent="Objects/Mesa4" node_paths=PackedStringArray("fade_transition")]
 collision_mask = 2
 script = ExtResource("6_0vaec")
+fade_transition = NodePath("../../../Fade_Transition")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Mesa4/InteractArea"]
 position = Vector2(-0.1875, -2.46875)
 shape = SubResource("RectangleShape2D_rei28")
+
+[node name="Fade_Transition" parent="." instance=ExtResource("7_wjcx0")]
 
 [node name="Player" parent="." instance=ExtResource("5_0txmt")]
 position = Vector2(-9.75, -232.25)
@@ -405,11 +411,7 @@ scale = Vector2(1, 1)
 [node name="LockerCodeCanvas" parent="." instance=ExtResource("10_nm3hn")]
 visible = false
 
-[node name="Fade_Transition" parent="." instance=ExtResource("7_wjcx0")]
-
-[node name="PauseMenuCanvas" type="CanvasLayer" parent="."]
-
-[node name="PauseMenu" parent="PauseMenuCanvas" instance=ExtResource("8_kf6d7")]
+[node name="PauseMenuCanvas" parent="." instance=ExtResource("8_kf6d7")]
 
 [node name="CutsceneManager" type="Node" parent="." node_paths=PackedStringArray("player", "old_locker_1")]
 script = ExtResource("9_cqi74")

@@ -1,5 +1,8 @@
 extends Area2D
 
+@export_category("Objects")
+@export var fade_transition: FadeTransition
+
 var is_in_area: bool
 
 func _ready() -> void:
@@ -15,8 +18,11 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if self.is_in_area and Game_Controller.has_first_book:
-		print("UAI")
 		if Input.is_action_just_pressed("interact"):
 			print("Você se senta para estudar... mas começa a ter uma sensação ruim.")
 			await get_tree().create_timer(1).timeout
-			get_tree().change_scene_to_file("res://scenes/Mapas/Dungeon_01.tscn")
+			fade_transition.transition_end.connect(_on_transition_end)
+			fade_transition.init()
+
+func _on_transition_end() -> void:
+	get_tree().change_scene_to_file("res://scenes/Mapas/Dungeon_01.tscn")
