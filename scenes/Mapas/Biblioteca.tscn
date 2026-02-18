@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://ijiq1dhl8y2o"]
+[gd_scene load_steps=27 format=4 uid="uid://ijiq1dhl8y2o"]
 
 [ext_resource type="Script" uid="uid://b6u1m62yxtcqk" path="res://scripts/Mapas/biblioteca.gd" id="1_5mgxb"]
 [ext_resource type="Texture2D" uid="uid://dvvn0vukv56i" path="res://assets/Cenario/Sala/parede_lados_cima.png" id="1_us5rh"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dpm6regsguk6c" path="res://scenes/Transitions/Fade_Transition.tscn" id="7_wjcx0"]
 [ext_resource type="PackedScene" uid="uid://cr8m852vu74l8" path="res://scenes/Menus/Pause_Menu.tscn" id="8_kf6d7"]
 [ext_resource type="Script" uid="uid://q2c7rcc6hk6r" path="res://scripts/Mapas/library_cutscene_manager.gd" id="9_cqi74"]
+[ext_resource type="PackedScene" uid="uid://cno61a8rqqjcg" path="res://scenes/Mapas/Library/locker_code_canvas.tscn" id="10_nm3hn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kf6d7"]
 texture = ExtResource("1_us5rh")
@@ -50,7 +51,7 @@ size = Vector2(80, 15)
 size = Vector2(80.625, 10.3125)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nm3hn"]
-size = Vector2(9.9375, 6.21875)
+size = Vector2(9.9375, 2)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_nm3hn"]
 size = Vector2(40, 40)
@@ -208,7 +209,7 @@ scale = Vector2(1, 0.33999985)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Armarios2/OldLockerArea"]
-position = Vector2(-21.125, 1.890625)
+position = Vector2(-21.5, 2.3125)
 shape = SubResource("RectangleShape2D_nm3hn")
 
 [node name="Estantes1" type="StaticBody2D" parent="Objects"]
@@ -371,13 +372,18 @@ visible = false
 position = Vector2(-9.75, -232.25)
 scale = Vector2(1, 1)
 
-[node name="CutsceneManager" type="Node" parent="."]
+[node name="CutsceneManager" type="Node" parent="." node_paths=PackedStringArray("player", "old_locker_1")]
 script = ExtResource("9_cqi74")
+player = NodePath("../Player")
+old_locker_1 = NodePath("../Objects/Armarios2/OldLockerArea")
 
 [node name="LibraryAnimation" type="AnimationPlayer" parent="CutsceneManager"]
 libraries = {
 &"": SubResource("AnimationLibrary_nm3hn")
 }
+
+[node name="LockerCodeCanvas" parent="." instance=ExtResource("10_nm3hn")]
+visible = false
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Objects/Armarios2/OldLockerArea" to="." method="_on_old_locker_area_body_entered"]

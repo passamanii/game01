@@ -1,14 +1,19 @@
 extends Node
 
 @onready var library_animation: AnimationPlayer = $LibraryAnimation
+@onready var locker_code_canvas: CanvasLayer = $"../LockerCodeCanvas"
 
-var player: BasePlayer 
+@export var player: BasePlayer 
+@export var old_locker_1: Area2D
 
 func _ready() -> void:
-	if !Cutscenes.showed_library_cutscenes:
-		player = get_tree().get_first_node_in_group("Player")
+	if !Cutscenes_Controller.showed_enter_library_cutscenes:
 		player.set_physics_process(false)
 		first_time_in_library_cutscene()
+	
+	if Cutscenes_Controller.showed_open_locker_1:
+		old_locker_1.monitoring = false
+		
 
 func move_backwards() -> void:
 	player.animation_player.play("Walking_Back")
@@ -119,3 +124,84 @@ func first_time_in_library_cutscene() -> void:
 
 	print("Objetivo atualizado: Encontrar o armário do setor restrito.")
 	player.set_physics_process(true)
+	Cutscenes_Controller.showed_enter_library_cutscenes = true
+
+func open_locker_cutscene() -> void:
+	locker_code_canvas.hide()
+	player.animation_player.play("Idle_Back")
+	old_locker_1.monitoring = false
+	
+	print("*O armário do setor restrito range lentamente ao ser aberto.*")
+	await get_tree().create_timer(0.1).timeout
+
+	print("Aluno: ...")
+	await get_tree().create_timer(0.1).timeout
+
+	print("*Um cheiro de papel antigo e poeira toma o ar.*")
+	await get_tree().create_timer(0.1).timeout
+
+	print("Aluno: Não tem nada demais aqui...")
+	await get_tree().create_timer(0.1).timeout
+
+	print("*As luzes da biblioteca piscam por um breve instante.*")
+	await get_tree().create_timer(0.1).timeout
+
+	print("Aluno: Tá... isso foi estranho.")
+	await get_tree().create_timer(0.1).timeout
+
+	print("*No fundo do armário, um único livro repousa envolto por uma capa escura.*")
+	await get_tree().create_timer(0.1).timeout
+
+	print("*O título parece mudar levemente quando você tenta focar nele.*")
+	await get_tree().create_timer(0.1).timeout
+
+	print("Aluno: \"Fundamentos Absolutos da Aprovação\"...?")
+	await get_tree().create_timer(0.1).timeout
+
+	print("*Ao tocar no livro, um arrepio percorre sua espinha.*")
+	await get_tree().create_timer(0.1).timeout
+
+	print("???: Finalmente...")
+	await get_tree().create_timer(0.1).timeout
+
+	print("Aluno: ...")
+	await get_tree().create_timer(0.1).timeout
+
+	print("Aluno: Eu ouvi isso mesmo?")
+	await get_tree().create_timer(0.1).timeout
+
+	print("*As páginas começam a se folhear sozinhas.*")
+	await get_tree().create_timer(0.1).timeout
+
+	print("???: Conhecimento exige um preço.")
+	await get_tree().create_timer(0.1).timeout
+
+	print("Aluno: Preço? Que preço?")
+	await get_tree().create_timer(0.1).timeout
+
+	print("*Silêncio absoluto.*")
+	await get_tree().create_timer(0.1).timeout
+
+	print("*As letras nas páginas parecem se reorganizar diante dos seus olhos.*")
+	await get_tree().create_timer(0.1).timeout
+
+	print("Aluno: Isso... isso vai me fazer passar na prova.")
+	await get_tree().create_timer(0.1).timeout
+
+	print("Aluno: Eu não tenho escolha.")
+	await get_tree().create_timer(0.1).timeout
+
+	print("*O livro finalmente para em um capítulo específico.*")
+	await get_tree().create_timer(0.1).timeout
+
+	print("*Você sente como se estivesse sendo observado pelas próprias palavras.*")
+	await get_tree().create_timer(0.1).timeout
+
+	print("Objetivo atualizado: Absorver o conhecimento do livro.")
+	await get_tree().create_timer(0.1).timeout
+
+	print("*O livro agora está em suas mãos.*")
+	
+	Cutscenes_Controller.showed_open_locker_1 = true
+	player.set_physics_process(true)
+	
