@@ -1,9 +1,10 @@
 extends Node
 
 var xp: int = 0
+var spentable_xp: int = xp
 var level: int = 1
 var health: int = 30 #Cada coração equivale à 10hp
-var max_health: int = 30
+var max_health: int = health
 var damage: float = 10 
 var level_requirement: Array = [0, 100, 300, 600, 800, 1000, 1200, 1400, 1600, 2000]
 
@@ -15,7 +16,6 @@ func gain_xp(xp_amount) -> void:
 		
 		if (xp >= level_requirement[level]):
 			level += 1
-			xp = 0
 			damage += 1.2 * level
 			
 			if (level % 2 == 0):
