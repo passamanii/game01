@@ -29,6 +29,16 @@ func _ready() -> void:
 	target = get_tree().get_first_node_in_group("Player")
 
 func _physics_process(_delta: float) -> void:
+	if (Game_Controller.is_cutscene):
+		var dir = (global_position - target.global_position).normalized()
+		velocity = dir * speed * 3
+		if (dir.x > 0):
+			sprite_2d.flip_h = true
+		else:
+			sprite_2d.flip_h = false
+		move_and_slide()
+		return
+	
 	var separation = (target.position - position).length()
 	if separation >= 1800:
 		queue_free()

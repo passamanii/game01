@@ -16,6 +16,8 @@ func _ready():
 		curr_state.Enter()
 
 func _physics_process(delta: float) -> void:
+	if Game_Controller.is_cutscene:
+		return
 	if (curr_state):
 		curr_state.Update(delta)
 

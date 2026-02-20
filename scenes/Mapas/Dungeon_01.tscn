@@ -372,12 +372,12 @@ enemyList = Array[PackedScene]([ExtResource("2_j7wm2"), ExtResource("2_j7wm2"), 
 spawn_timer = NodePath("../SpawnTimer")
 waves_controller = NodePath("../WavesController")
 
-[node name="CutsceneManager" type="Node" parent="." node_paths=PackedStringArray("player", "anim_robot", "dungeon_01_animation", "spawner_timer")]
+[node name="CutsceneManager" type="Node" parent="." node_paths=PackedStringArray("player", "anim_temp_robot", "dungeon_01_animation", "spawn_controller")]
 script = ExtResource("10_64yte")
 player = NodePath("../Player")
-anim_robot = NodePath("../TempRobot/AnimRobot")
+anim_temp_robot = NodePath("../TempRobot/AnimRobot")
 dungeon_01_animation = NodePath("Dungeon01Animation")
-spawner_timer = NodePath("../SpawnTimer")
+spawn_controller = NodePath("../SpawnerController")
 
 [node name="Dungeon01Animation" type="AnimationPlayer" parent="CutsceneManager"]
 root_node = NodePath("../..")
