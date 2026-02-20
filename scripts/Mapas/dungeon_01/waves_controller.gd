@@ -21,7 +21,7 @@ func wave_finished() -> void:
 	spawner_controller.pause()
 	
 	for enemy in get_tree().get_nodes_in_group("Enemy"):
-		enemy.queue_free()
+		enemy.explode_and_die()
 		
 	seconds_left = 60
 	actual_wave += 1
@@ -36,7 +36,7 @@ func win() -> void:
 	emit_signal("finished_dungeon_01", true)
 
 func _on_spawn_timer_timeout() -> void:
-	seconds_left -= 10
+	seconds_left -= 1
 	if (seconds_left < 0 and actual_wave >= 5):
 		win()
 		time_left_label.text = "0:00"

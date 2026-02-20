@@ -9,6 +9,7 @@ class_name BaseEnemy
 @export var hitbox_area: Area2D
 @export var attack_cooldown: Timer
 @export var damage_popup: PackedScene
+@export var gpu_particle: PackedScene
 
 @export_category("Variables")
 @export var max_health: int
@@ -88,9 +89,19 @@ func start_cooldown() -> void:
 func apply_knockback(delta) -> void:
 	knockback_velocity = knockback_velocity.move_toward(Vector2.ZERO, knockback_decay * delta)
 
+# Da pra melhorar isso, mas essa função existe para os finais das waves, pois
+# todos os inimigos morrem, mas não é pra dar xp
+func explode_and_die():
+	sprite_2d.hide()
+	var particle = gpu_particle.instantiate()
+	particle.position = position
+	get_tree().current_scene.add_child(particle)
+	particle.emitting = true
+	queue_free()
+
 func die() -> void:
 	Player_Stats.gain_xp(xp_amount)
-	queue_free()
+	explode_and_die()
 
 func _on_hitbox_area_area_entered(area: Area2D) -> void:
 	if (area.get_parent().is_in_group("Player")):
