@@ -42,7 +42,7 @@ func _on_skill_hovered(button: SkillButton):
 	if skill_data.level <= 2:
 		cost_label.text = 'Custo: %d' %skill_data.perk_cost[skill_data.level]
 	else:
-		cost_label.text = 'Nível Máximo'
+		cost_label.text = 'Nível Máximo!'
 	skills_details.show()
 	print('mouse dentro')
 	

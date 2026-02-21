@@ -10,8 +10,7 @@ enum SkillType {
 @export var skill_type: SkillType
 @export var perk_description: String
 @export var perk_cost: Array[int] = [ ]
-
-var level: int = 0
+@export var level: int = 0
 
 func apply_perk() -> void:
 	pass

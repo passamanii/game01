@@ -42,34 +42,10 @@ func _on_pressed() -> void:
 		panel.show_behind_parent = true
 		line_2d.default_color = Color(0.671, 0.536, 0.251, 1.0)
 		unlock_children()
-	#if level == 0:	
-		#if (Player_Stats.spentable_xp >= skill_data.perk_cost1):
-			#level = min(level+1, 3)
-			#panel.show_behind_parent = true
-			#line_2d.default_color = Color(0.671, 0.536, 0.251, 1.0)
-			#print(Player_Stats.spentable_xp)
-			#Player_Stats.spentable_xp -= skill_data.perk_cost1
-			#print(Player_Stats.spentable_xp)
-			#
-	#
-	#if level == 1:	
-		#if (Player_Stats.spentable_xp >= skill_data.perk_cost2):
-			#level = min(level+1, 3)
-			#panel.show_behind_parent = true
-			#line_2d.default_color = Color(0.671, 0.536, 0.251, 1.0)
-			#print(Player_Stats.spentable_xp)
-			#Player_Stats.spentable_xp -= skill_data.perk_cost2
-			#print(Player_Stats.spentable_xp)
-			#
-	#
-	#if level == 2:	
-		#if (Player_Stats.spentable_xp >= skill_data.perk_cost3):
-			#level = min(level+1, 3)
-			#panel.show_behind_parent = true
-			#line_2d.default_color = Color(0.671, 0.536, 0.251, 1.0)
-			#print(Player_Stats.spentable_xp)
-			#Player_Stats.spentable_xp -= skill_data.perk_cost3
-			#print(Player_Stats.spentable_xp)
+		print('Tentando aplicar: ', skill_data)
+		print('Classe: ', skill_data.get_class())
+		skill_data.apply_perk()
+	
 			
 func unlock_children():
 	var skills = get_children()

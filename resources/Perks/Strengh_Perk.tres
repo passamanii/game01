@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="BasePerk" load_steps=2 format=3 uid="uid://dghnx4n6mmt2h"]
+[gd_resource type="Resource" script_class="StrenghPerk" load_steps=2 format=3 uid="uid://dghnx4n6mmt2h"]
 
-[ext_resource type="Script" uid="uid://ccbgmi5qgb6vn" path="res://scripts/Modules/Perks/Base_Perk.gd" id="1_kmu2y"]
+[ext_resource type="Script" uid="uid://ctnjydanvrplt" path="res://scripts/Modules/Perks/Strengh_Perk.gd" id="1_kmu2y"]
 
 [resource]
 script = ExtResource("1_kmu2y")

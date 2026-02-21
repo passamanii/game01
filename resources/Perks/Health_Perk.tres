@@ -7,5 +7,5 @@ script = ExtResource("1_mnw7r")
 perk_name = "Fitness"
 perk_id = 1
 perk_description = "Você começa a se exercitar e ganha mais vitalidade (+10HP)"
-perk_cost = [100, 300, 500]
+perk_cost = Array[int]([100, 300, 500])
 metadata/_custom_type_script = "uid://b0t8wys00hgtf"
